@@ -1,0 +1,4 @@
+{
+    "PORT" : 5000,
+    "MONGO" : "mongodb://students:Raushan1298@ds119044.mlab.com:19044/student_detail"
+}

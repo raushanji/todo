@@ -1,0 +1,38 @@
+<div class="d-flex flex-column p-3">
+
+  <div class="w-100">
+    <h3 class="d-inline-block float-left">
+      ToDo List Detail
+    </h3>
+    <button class="btn btn-primary float-right" (click)="signOut()">
+      Logout
+    </button>
+  </div>
+
+  <hr class="w-100">
+
+<div class="row w-100">
+<div class="col-4 p-3 m-auto" *ngFor="let detail of todoDetailArray">
+  <div class="card" style="background-color: antiquewhite">
+    <div class="card-body">
+      <h4 class="card-title">Name : {{ detail?.name }}</h4>
+      <h4 class="card-title">Father's Name : {{ detail?.fathersName }}</h4>
+      <h4 class="card-title">Age : {{ detail?.age }}</h4>
+      <h4 class="card-title">Email : {{ detail?.email }}</h4>
+      <h4 class="card-title">Phone No. : {{ detail?.phone }}</h4>
+      <h4 class="card-title">Address : <p>{{ detail?.address.line1}}<br>{{ detail?.address.line1}}<br>{{ detail?.address.city}}<br>{{ detail?.address.state}}<br>{{ detail?.address.pincode}}<br>{{ detail?.address.country}}</p></h4>
+    <p class="card-text">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+    </p>
+    <p class="text-center">
+    <a class="btn btn-primary text-white" (click)="back()">
+      Back 
+    </a>
+    </p>
+    
+  </div>
+</div>
+</div>
+</div>
+</div>

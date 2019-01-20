@@ -1,0 +1,47 @@
+<div class="d-flex flex-column p-3">
+
+  <div class="w-100">
+    <h3 class="d-inline-block float-left">
+      ToDo Lists
+    </h3>
+    <button class="btn btn-primary float-right" (click)="signOut()">
+      Logout
+    </button>
+  </div>
+
+  <hr class="w-100">
+
+  <div class="row w-100">
+    <div class="col-12">
+      <button class="btn btn-primary float-left" (click)="goToCreateTodo()">
+        Create ToDo
+      </button> </div>
+
+    <div class="col-4 p-3" *ngFor="let user of userArray">
+      <div class="card" style="background-color: antiquewhite">
+        <div class="card-body">
+          <h4 class="card-title">Name : {{ user?.name }}</h4>
+          <h4 class="card-title">Age : {{ user?.age }}</h4>
+          <h4 class="card-title">Email : {{ user?.email }}</h4>
+          <p class="card-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+          </p>
+          <p class="text-center">
+          <a class="btn btn-primary" [routerLink]="['/edit', user?.email ]" [queryParams]="{ age : user?.age , pincode : user?.address?.pincode}">
+            Edit
+          </a> &nbsp;
+          <a class="btn btn-primary" [routerLink]="['/detail']" [queryParams]="{email : user?.email}">
+            Detail
+          </a> &nbsp;
+          <a class="btn btn-primary text-white" (click)="delete(user?.email)">
+            Delete
+          </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
